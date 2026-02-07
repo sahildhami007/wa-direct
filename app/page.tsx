@@ -11,7 +11,7 @@ export default function Home() {
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-2 dark:text-white">Send WhatsApp Direct</h1>
           <p className="text-sm text-gray-500 dark:text-gray-300 mb-6">
-            Message without saving the contact
+            Message without saving the contact -test
           </p>
         </div>
 

@@ -1,9 +1,9 @@
-import WhatsAppForm from "@/components/WhatsAppForm";
+import AdSense from "@/components/AdSense";
 import Footer from "@/components/Footer";
-import AdBanner from "@/components/AdBanner";
+import WhatsAppForm from "@/components/WhatsAppForm";
+const adsenseSlotId = process.env.NEXT_PUBLIC_ADSENSE_SLOT;
 
 export default function Home() {
-  const adSlot = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_SLOT;
 
   return (
     <div className="font-sans flex flex-col items-center justify-between min-h-screen p-8 pb-20 gap-8 sm:p-10">
@@ -14,15 +14,12 @@ export default function Home() {
             Message without saving the contact
           </p>
         </div>
-        
+
         <WhatsAppForm />
-        
-        {adSlot ? (
-          <div className="mt-4 w-full">
-            <AdBanner adSlot={adSlot} />
-          </div>
-        ) : null}
-        
+
+        {/* Ad below hero */}
+        {adsenseSlotId ? <AdSense slot={adsenseSlotId} /> : null}
+
         <div className="mt-6 text-sm text-gray-600 dark:text-gray-300 text-center">
           <p className="mb-2">
             How to send WhatsApp message without saving the phone number? That is what this
@@ -35,7 +32,7 @@ export default function Home() {
           </p>
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );
